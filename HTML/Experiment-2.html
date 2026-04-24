@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Balance App</title>
+
+<style>
+    :root {
+        --bg: #f2f2f2;
+        --card: #ffffff;
+        --text: #000;
+        --input-border: #cfd8dc;
+    }
+
+    body.dark {
+        --bg: #121212;
+        --card: #1e1e1e;
+        --text: #ffffff;
+        --input-border: #555;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .card {
+        background: var(--card);
+        width: 420px;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.15);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    h1 {
+        font-size: 44px;
+        margin-bottom: 30px;
+    }
+
+    label {
+        display: block;
+        text-align: left;
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid var(--input-border);
+        border-radius: 6px;
+        margin-bottom: 25px;
+        outline: none;
+        background: transparent;
+        color: var(--text);
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    button {
+        flex: 1;
+        padding: 14px;
+        font-size: 22px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .deposit {
+        background: #1e5bff;
+    }
+
+    .withdraw {
+        background: #ff2b2b;
+    }
+
+    .error {
+        color: red;
+        font-size: 26px;
+        margin-top: 25px;
+    }
+
+    /* Toggle Switch */
+    .toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .switch {
+        position: relative;
+        width: 50px;
+        height: 25px;
+    }
+
+    .switch input {
+        display: none;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background: #ccc;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+    .slider::before {
+        content: "";
+        position: absolute;
+        width: 19px;
+        height: 19px;
+        left: 3px;
+        bottom: 3px;
+        background: white;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    input:checked + .slider {
+        background: #4caf50;
+    }
+
+    input:checked + .slider::before {
+        transform: translateX(25px);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="toggle">
+    <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+    </label>
+</div>
+
+<div class="card">
+    <h1>Balance: $1000</h1>
+
+    <label>Amount</label>
+    <input type="number">
+
+    <div class="buttons">
+        <button class="deposit">Deposit</button>
+        <button class="withdraw">Withdraw</button>
+    </div>
+
+    <div class="error">Invalid amount!</div>
+</div>
+
+<script>
+    const toggle = document.getElementById("themeToggle");
+
+    toggle.addEventListener("change", () => {
+        document.body.classList.toggle("dark");
+    });
+</script>
+
+</body>
+</html>

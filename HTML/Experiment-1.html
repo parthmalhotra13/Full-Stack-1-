@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 420px;
+            background: #fff;
+            margin: 60px auto;
+            padding: 30px 35px 40px;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid red;
+            border-radius: 4px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+            margin: 6px 0 18px;
+        }
+
+        .btn {
+            background: linear-gradient(#444, #000);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .btn:hover {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Registration</h1>
+
+        <label>Full Name:</label>
+        <input type="text">
+        <div class="error">Must contain 9–50 letters</div>
+
+        <label>Email:</label>
+        <input type="email">
+        <div class="error">Valid email required</div>
+
+        <label>Age:</label>
+        <input type="number">
+        <div class="error">Age 16–30 only</div>
+
+        <button class="btn">Register</button>
+    </div>
+
+</body>
+</html>
