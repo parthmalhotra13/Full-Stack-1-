@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #ff4d4d;
+      border-radius: 4px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:valid {
+      border-color: #4CAF50;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Student Registration</h2>
+
+  <form>
+    <!-- Name -->
+    <label>Full Name:</label>
+    <input type="text"
+           pattern="[A-Za-z ]{9,50}"
+           title="Must contain 9-50 letters"
+           required>
+    <div class="error">Must contain 9-50 letters</div>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="email" required>
+    <div class="error">Valid email required</div>
+
+    <!-- Age -->
+    <label>Age:</label>
+    <input type="number"
+           min="16"
+           max="30"
+           required>
+    <div class="error">Age 16-30 only</div>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+</body>
+</html>
